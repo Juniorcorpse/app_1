@@ -1,0 +1,14 @@
+{{>partials/header}}
+
+<h2>qual seu nome?</h2>
+<form method='get'>
+<input type="text" name="nome" placeholder="digite seu nome" /><br/>
+<input type="submit" value="Enviar"/>
+</form>
+
+{{#nome}}
+<hr/>
+opa {{nome}}, tudo bem?
+{{/nome}}
+    
+{{>partials/footer}}

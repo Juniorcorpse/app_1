@@ -11,6 +11,7 @@ server.engine('mustache', mustashe());
 
 server.use(express.static(path.join(__dirname, '../public')));
 
+server.use(express.urlencoded({extended:true}))
 
 server.use(mainRoutes);
 

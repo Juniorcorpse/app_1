@@ -1,0 +1,28 @@
+{{>partials/header}}
+
+{{! condicional }}
+    {{#showOld}}
+olá como vai?
+    {{/showOld}}
+
+{{! loop }}
+<h2>Lista: </h2>
+    
+    <ul>
+    {{#products}}
+    <li>
+{{title}} : R$ {{price}}
+</li>
+    {{/products}}
+</ul>
+
+<h2>Lista Simples: </h2>
+{{#frase}}
+<li>{{.}}</li>
+{{/frase}}
+
+{{! loop condicional}}
+{{^frase}}
+não ha frase
+{{/frase}}
+{{>partials/footer}}
