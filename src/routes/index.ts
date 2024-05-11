@@ -1,7 +1,8 @@
 import { Router, Request, Response, query } from "express";
-
+import { HomeController } from "../controllers/HomeController";
 const router = Router();
 
+router.get('/', HomeController);
 router.get('/', (req: Request, res:Response)=>{
     let age: number = 90;
     let showOld:boolean = false;
