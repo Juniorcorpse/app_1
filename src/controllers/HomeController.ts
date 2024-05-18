@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
-import { sequelize } from "../instances/postgres";
+import { User } from "../models/User";
 
 export const HomeController = async (req: Request, res: Response) => {
-    try{
-        await sequelize.authenticate();
-        console.log("conexão estabelecida com sucesso! C/ postgres")
-    }catch(error){
-        console.log("Deu Problema: ", error)
-    }
-    
+    let users = await User.findAll({
+        attributes:['name', 'age']
+    });
+    console.log("USUARIOS: ", JSON.stringify(users));   
+
+    res.render('pages/home',{
+        users
+    });
 }

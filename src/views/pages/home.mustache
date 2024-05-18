@@ -4,7 +4,14 @@
     {{#showOld}}
 olá como vai?
     {{/showOld}}
-
+<hr/>
+<h2>usuarios do banco: </h2>
+<ul>
+    {{#users}}
+        <li> {{name}} - idade: {{age}}</li>
+    {{/users}}
+</ul>
+<hr/>
 {{! loop }}
 <h2>Lista: </h2>
     
